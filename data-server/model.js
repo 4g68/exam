@@ -1,19 +1,29 @@
 const mongoose = require("mongoose");
+const { ObjectUnsubscribedError } = require("rxjs");
 
-const ExpenseModel = mongoose.model("feedback",
+const ExpenseModel = mongoose.model("expense",
     mongoose.Schema({
-        name: {
+        desc: {
             type: String,
             required: true
         },
-        score: {
+        date: {
+            type: Date,
+            required: true
+        },
+        category: {
+            type: Number,
+            required: true
+        },
+        amount: {
             type: Number,
             required: true
         }
+        
     })
 );
 
-const FeedbackModel = mongoose.model("feedback",
+const FeedbackModel = mongoose.model("category",
     mongoose.Schema({
         name: {
             type: String,
