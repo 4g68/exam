@@ -11,8 +11,8 @@ const ExpenseModel = mongoose.model("expense",
             type: Date,
             required: true
         },
-        category: {
-            type: Number,
+        category_id: {
+            type: mongoose.SchemaTypes.ObjectId,
             required: true
         },
         amount: {
@@ -23,13 +23,13 @@ const ExpenseModel = mongoose.model("expense",
     })
 );
 
-const FeedbackModel = mongoose.model("category",
+const CategoryModel = mongoose.model("category",
     mongoose.Schema({
         name: {
             type: String,
             required: true
         },
-        score: {
+        threshold: {
             type: Number,
             required: true
         }
@@ -37,4 +37,4 @@ const FeedbackModel = mongoose.model("category",
 );
 
 
-module.exports = FeedbackModel;
+module.exports = {ExpenseModel, CategoryModel};

@@ -4,7 +4,9 @@ const cors = require("cors");
 
 const app = express();
 
-handler = require("./routes");
+category = require("./categoryroute");
+expense = require("./expenseroute");
+
 
 mongoose
   .connect(
@@ -17,7 +19,8 @@ mongoose
 app.use(cors());
 app.use(express.json());
 
-app.use("/api/feedback", handler);
+app.use("/api/category", category);
+app.use("/api/expense", expense);
 
 const PORT = 3000;
 
