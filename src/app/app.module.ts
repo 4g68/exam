@@ -15,10 +15,22 @@ import { MatTableModule } from '@angular/material/table';
 import { MatListModule } from '@angular/material/list'; 
 import { MatExpansionModule } from '@angular/material/expansion'; 
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './header/header.component';
+import { ExpenseManagerComponent } from './expense-manager/expense-manager.component';
+import { CategoryListComponent } from './category-list/category-list.component';
+import { DailyListComponent } from './daily-list/daily-list.component';
+import { FooterComponent } from './footer/footer.component';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    ExpenseManagerComponent,
+    CategoryListComponent,
+    DailyListComponent,
+    FooterComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
