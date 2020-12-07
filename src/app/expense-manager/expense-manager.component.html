@@ -1,6 +1,35 @@
 <mat-card>
     <mat-card-title>Expense Manager</mat-card-title>
     <mat-card-content>
-        Test
+        <h2>New Expense</h2>
+        <mat-form-field appearance="outline" style="margin-right: 10px;">
+            <mat-label>Expense Name</mat-label>
+            <input matInput [(ngModel)] = "ename">
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="margin-right: 10px;">
+            <mat-label>Category</mat-label>
+            <input matInput [(ngModel)] = "ecat">
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="margin-right: 10px;">
+            <mat-label>Amount</mat-label>
+            <input matInput [(ngModel)] = "eamount">
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="margin-right: 10px;">
+            <mat-label>Date</mat-label>
+            <input matInput [(ngModel)] = "edate">
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="addExpense()">SUBMIT</button>
+    </mat-card-content>
+    <mat-card-content>
+        <h2>New Category</h2>
+        <mat-form-field appearance="outline" style="margin-right: 10px;">
+            <mat-label>Category Name</mat-label>
+            <input matInput [(ngModel)] = "cname">
+        </mat-form-field>
+        <mat-form-field appearance="outline" style="margin-right: 10px;">
+            <mat-label>Threshold</mat-label>
+            <input matInput [(ngModel)] = "cthreshold">
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="addCategory()">SUBMIT</button>
     </mat-card-content>
 </mat-card>

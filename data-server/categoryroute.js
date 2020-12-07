@@ -13,10 +13,11 @@ route.get("/",async (req, res) => {
 });
 
 route.post("/", async (req, res) => {
-  const name = req.body.name
+  const name = req.body.name;
+  const threshold = req.body.threshold;
   const item = new Category({
     name: name,
-    score: score
+    threshold: threshold
   })
   try {
     const result = await item.save();

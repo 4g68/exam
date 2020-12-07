@@ -12,7 +12,7 @@ const ExpenseModel = mongoose.model("expense",
             required: true
         },
         category_id: {
-            type: mongoose.SchemaTypes.ObjectId,
+            type: String,
             required: true
         },
         amount: {

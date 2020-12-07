@@ -1,6 +1,14 @@
 <mat-card style="min-height: 300px;">
     <mat-card-title>Daily Expense List</mat-card-title>
     <mat-card-content>
-        Test
+        <mat-list *ngFor="let entry of expenseList; let i = index">
+            <mat-list-item>
+                {{ i + 1 }}. Description: {{ entry.desc }} &nbsp;&nbsp;&nbsp; Amount: {{ entry.amount }}
+                &nbsp;&nbsp;&nbsp; Category: {{ entry.category_id }}
+                <button class="delete_button" mat-icon-button color="warn" (click)="fbService.delete(entry._id)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </mat-list-item>
+        </mat-list>
     </mat-card-content>
 </mat-card>

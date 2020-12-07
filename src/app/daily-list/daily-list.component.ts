@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ExpenseDataService } from '../expense-data.service'
 
 @Component({
   selector: 'app-daily-list',
@@ -6,10 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./daily-list.component.css']
 })
 export class DailyListComponent implements OnInit {
-
-  constructor() { }
+  public subscription;
+  public expenseList;
+  constructor(
+    private fbService: ExpenseDataService // inject service
+  ) { }
+  
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe(); // onDestroy cancels the subscribe request
+  }
 
   ngOnInit(): void {
+    this.subscription = this.fbService.getSubscription().subscribe(msg => {
+      this.expenseList = msg;
+    });
+    this.fbService.forceReload();
   }
 
 }
